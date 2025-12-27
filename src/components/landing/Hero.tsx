@@ -73,7 +73,7 @@ function ElegantShape({
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-pattern">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-pattern py-20 md:py-0">
       {/* Formas geométricas animadas */}
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
