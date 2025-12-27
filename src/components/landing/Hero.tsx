@@ -125,7 +125,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: ANIMATION_DURATION.SLOW, delay: ANIMATION_DELAY.SHORT, ease: EASING.SMOOTH }}
-            className="space-y-8"
+            className="space-y-4 md:space-y-8"
           >
             {/* Logo */}
             <motion.div
