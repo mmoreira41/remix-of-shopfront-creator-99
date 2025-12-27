@@ -2,30 +2,35 @@ import { Gift, Youtube, MessageSquare, Sparkles, Users, Video } from "lucide-rea
 
 const bonuses = [
   {
+    id: "bonus-1",
     icon: Youtube,
     label: "BÔNUS 1",
     title: "YouTube Shopping",
     description: "Aprenda a fazer grana com o novo YouTube Shopping em primeira mão e saia na frente antes de todo mundo.",
   },
   {
+    id: "bonus-2",
     icon: Sparkles,
     label: "BÔNUS 2",
     title: "Meu Criador de Prompts",
     description: "Crie prompts otimizados no ChatGPT, economize tempo e obtenha respostas mais criativas e claras.",
   },
   {
+    id: "bonus-3",
     icon: Gift,
     label: "BÔNUS 3",
     title: 'Hack - IAs de "GRAÇA"',
     description: "Economize muito com as IAs mais usadas através de um hack exclusivo que vou te mostrar passo a passo.",
   },
   {
+    id: "bonus-4",
     icon: Users,
     label: "BÔNUS 4",
     title: "Grupo do WhatsApp",
     description: "Entre no grupo exclusivo da Renda Com Shop no WhatsApp e troque prompts, ideias e resultados com pessoas do mesmo propósito.",
   },
   {
+    id: "bonus-5",
     icon: Video,
     label: "BÔNUS 5",
     title: "Fazendo R$ 10K com Lives",
@@ -54,9 +59,9 @@ const Bonuses = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {bonuses.map((bonus, index) => (
+          {bonuses.map((bonus) => (
             <div
-              key={index}
+              key={bonus.id}
               className="group p-8 rounded-2xl bg-card/50 backdrop-blur border border-border hover:border-accent/50 transition-all duration-500 hover:-translate-y-2"
             >
               <span className="text-xs font-bold text-accent uppercase tracking-wider">

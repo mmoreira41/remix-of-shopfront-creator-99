@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Flame, Shield } from "lucide-react";
 
 const includedItems = [
-  { title: "Curso Renda Com Shop", original: "R$ 597,00", price: "R$ 297,00" },
-  { title: "Fazendo 10K com Lives", original: "R$ 997,00", price: "R$ 0,00" },
-  { title: "Bônus: YouTube Shop", original: "R$ 297,00", price: "R$ 0,00" },
-  { title: 'Hack - IAs de "GRAÇA"', original: "R$ 197,00", price: "R$ 0,00" },
-  { title: "Meu Criador de Prompts", original: "R$ 97,00", price: "R$ 0,00" },
-  { title: "Grupo - WhatsApp", original: "R$ 47,00", price: "R$ 0,00" },
+  { id: "item-1", title: "Curso Renda Com Shop", original: "R$ 597,00", price: "R$ 297,00" },
+  { id: "item-2", title: "Fazendo 10K com Lives", original: "R$ 997,00", price: "R$ 0,00" },
+  { id: "item-3", title: "Bônus: YouTube Shop", original: "R$ 297,00", price: "R$ 0,00" },
+  { id: "item-4", title: 'Hack - IAs de "GRAÇA"', original: "R$ 197,00", price: "R$ 0,00" },
+  { id: "item-5", title: "Meu Criador de Prompts", original: "R$ 97,00", price: "R$ 0,00" },
+  { id: "item-6", title: "Grupo - WhatsApp", original: "R$ 47,00", price: "R$ 0,00" },
 ];
 
 const Pricing = () => {
@@ -60,9 +60,9 @@ const Pricing = () => {
 
             {/* What's included */}
             <div className="space-y-4">
-              {includedItems.map((item, index) => (
+              {includedItems.map((item) => (
                 <div
-                  key={index}
+                  key={item.id}
                   className="flex items-center justify-between p-4 rounded-xl bg-card/50 border border-border"
                 >
                   <div className="flex items-center gap-3">

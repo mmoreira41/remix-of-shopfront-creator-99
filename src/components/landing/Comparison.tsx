@@ -1,21 +1,21 @@
 import { Check, X, Zap } from "lucide-react";
 
 const otherCourses = [
-  "Criação de imagens sem direção",
-  "Aulas soltas e sem estratégia",
-  "Imagens bonitas, sem utilidade",
-  "Nenhum passo a passo de vendas",
-  "Nada pronto para aplicar",
-  "Sem método, sem base, sem resultado",
+  { id: "other-1", text: "Criação de imagens sem direção" },
+  { id: "other-2", text: "Aulas soltas e sem estratégia" },
+  { id: "other-3", text: "Imagens bonitas, sem utilidade" },
+  { id: "other-4", text: "Nenhum passo a passo de vendas" },
+  { id: "other-5", text: "Nada pronto para aplicar" },
+  { id: "other-6", text: "Sem método, sem base, sem resultado" },
 ];
 
 const rendaComShop = [
-  "Crie vídeos que viralizam e vendem",
-  "Estratégias práticas e aplicadas",
-  "Foco total em você ter resultados",
-  "Método validado: View até a venda",
-  "Suporte direto e exemplos reais",
-  "Você sai pronto pra agir e faturar",
+  { id: "renda-1", text: "Crie vídeos que viralizam e vendem" },
+  { id: "renda-2", text: "Estratégias práticas e aplicadas" },
+  { id: "renda-3", text: "Foco total em você ter resultados" },
+  { id: "renda-4", text: "Método validado: View até a venda" },
+  { id: "renda-5", text: "Suporte direto e exemplos reais" },
+  { id: "renda-6", text: "Você sai pronto pra agir e faturar" },
 ];
 
 const Comparison = () => {
@@ -40,12 +40,12 @@ const Comparison = () => {
           <div className="p-8 rounded-2xl bg-card/30 border border-border">
             <h3 className="text-xl font-bold mb-6 text-muted-foreground">OUTROS CURSOS</h3>
             <ul className="space-y-4">
-              {otherCourses.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
+              {otherCourses.map((item) => (
+                <li key={item.id} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <X className="w-4 h-4 text-destructive" />
                   </div>
-                  <span className="text-muted-foreground">{item}</span>
+                  <span className="text-muted-foreground">{item.text}</span>
                 </li>
               ))}
             </ul>
@@ -56,12 +56,12 @@ const Comparison = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
             <h3 className="text-xl font-bold mb-6 text-primary relative z-10">RENDA COM SHOP</h3>
             <ul className="space-y-4 relative z-10">
-              {rendaComShop.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
+              {rendaComShop.map((item) => (
+                <li key={item.id} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-foreground font-medium">{item}</span>
+                  <span className="text-foreground font-medium">{item.text}</span>
                 </li>
               ))}
             </ul>

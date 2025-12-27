@@ -1,5 +1,8 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const testimonials = [
   {
@@ -34,7 +37,56 @@ const testimonials = [
   },
 ];
 
+interface TestimonialsColumnProps {
+  testimonials: typeof testimonials;
+  duration?: number;
+  className?: string;
+}
+
+function TestimonialsColumn({ testimonials, duration = 15, className = "" }: TestimonialsColumnProps) {
+  return (
+    <div className={className}>
+      <motion.div
+        animate={{
+          translateY: "-50%",
+        }}
+        transition={{
+          duration: duration,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className="flex flex-col gap-6 pb-6"
+      >
+        {[...Array(2)].fill(0).map((_, index) => (
+          <React.Fragment key={index}>
+            {testimonials.map((testimonial, i) => (
+              <div
+                key={`${index}-${i}`}
+                className="p-6 rounded-2xl bg-card/50 backdrop-blur border border-border hover:border-primary/30 transition-all duration-300 max-w-xs w-full"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.stars)].map((_, starIndex) => (
+                    <Star key={starIndex} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-4 leading-relaxed">"{testimonial.text}"</p>
+                <p className="text-sm font-semibold text-primary">{testimonial.name}</p>
+              </div>
+            ))}
+          </React.Fragment>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
 const Testimonials = () => {
+  // Divide os testimonials em três colunas
+  const firstColumn = testimonials.slice(0, 2);
+  const secondColumn = testimonials.slice(2, 4);
+  const thirdColumn = testimonials.slice(4, 6);
+
   return (
     <section className="py-24 bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
       <div className="absolute inset-0">
@@ -42,43 +94,33 @@ const Testimonials = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 text-primary text-sm font-semibold uppercase tracking-wider">
-            <MessageCircle className="w-5 h-5" />
-            DEPOIMENTOS
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold">
-            O que os alunos estão <span className="text-gradient-cyan">falando</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Muita gente já aplica o método e transforma vídeos simples em grana.{" "}
-            <strong className="text-foreground">Começaram do zero e já estão fazendo vendas!</strong>
-          </p>
+        <SectionHeader
+          badge="Depoimentos"
+          icon={MessageCircle}
+          title={<>O que os alunos estão <span className="text-gradient-cyan">falando</span></>}
+          description={<>Muita gente já aplica o método e transforma vídeos simples em grana. <strong className="text-foreground">Começaram do zero e já estão fazendo vendas!</strong></>}
+          className="mb-16"
+        />
+
+        {/* Colunas de testimonials com scroll infinito */}
+        <div className="flex justify-center gap-6 mb-12 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[600px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-2xl bg-card/50 backdrop-blur border border-border hover:border-primary/30 transition-all duration-300"
-            >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.stars)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-foreground mb-4 leading-relaxed">"{testimonial.text}"</p>
-              <p className="text-sm font-semibold text-primary">{testimonial.name}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
           <Button variant="cta" size="xl" className="group">
             GARANTIR MINHA VAGA
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -8,22 +8,27 @@ import {
 
 const faqs = [
   {
+    id: "faq-1",
     question: "01. O curso é ao vivo?",
     answer: "Não. O curso é 100% online e gravado, para você assistir quando e onde quiser. As aulas ficam disponíveis na plataforma e você pode pausar, rever e seguir no seu ritmo.",
   },
   {
+    id: "faq-2",
     question: "02. As ferramentas que vocês usam são gratuitas?",
     answer: "As melhores ferramentas são pagas, mas durante o curso mostramos um hack exclusivo que permite acessar tudo pagando bem, bem mais barato. Assim você usa o que há de melhor sem gastar quase nada.",
   },
   {
+    id: "faq-3",
     question: "03. Eu vou conseguir criar algo ou é só teoria?",
     answer: "Você vai criar. O curso é totalmente prático e focado em aplicar o que aprende. Desde as primeiras aulas você já começa a executar e ver resultados reais.",
   },
   {
+    id: "faq-4",
     question: "04. Tenho quanto tempo para assistir?",
     answer: "O acesso é anual. Você pode assistir quantas vezes quiser e rever as aulas quando precisar no período de 365 dias.",
   },
   {
+    id: "faq-5",
     question: "05. E se eu não gostar? Tenho garantia?",
     answer: "Sim. Você tem 7 dias de garantia para testar o curso. Se achar que não é pra você, devolvemos 100% do valor sem burocracia. Eu duvido não gostar do conteúdo!",
   },
@@ -49,10 +54,10 @@ const FAQ = () => {
 
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {faqs.map((faq) => (
               <AccordionItem
-                key={index}
-                value={`faq-${index}`}
+                key={faq.id}
+                value={faq.id}
                 className="border border-border rounded-xl bg-card/50 backdrop-blur px-6 overflow-hidden"
               >
                 <AccordionTrigger className="text-left py-6 hover:no-underline">

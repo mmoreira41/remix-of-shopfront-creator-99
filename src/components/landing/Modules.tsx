@@ -8,22 +8,27 @@ import {
 
 const modules = [
   {
+    id: "module-1",
     title: "Copy - Do roteiro as Vendas",
     description: "Aprenda a transformar roteiros em lucro. Domine ganchos, legendas e narrativas que prendem atenção e convertem em vendas reais. Conteúdo prático e direto para você escrever o que vende e não o que apenas entretém.",
   },
   {
+    id: "module-2",
     title: "TikTok Shop no Brasil",
     description: "Domine o jogo no mercado brasileiro. Aprenda as estratégias que fazem vídeos comuns explodirem em vendas, mesmo começando do zero. Você vai entender como usar o algoritmo e vender todos os dias de forma simples e escalável.",
   },
   {
+    id: "module-3",
     title: "TikTok Shop na Gringa",
     description: "Aprenda como brasileiros estão faturando em dólar criando vídeos para produtos internacionais. Descubra como encontrar oportunidades fora do país, produzir vídeos que vendem e aproveitar o alto potencial de lucro da gringa.",
   },
   {
+    id: "module-4",
     title: "Dark - Monetize sem Aparecer",
     description: "Ganhe dinheiro sem mostrar o rosto! Aprenda a criar perfis anônimos, usar vozes e imagens com IA e montar uma estrutura que vende sozinha. Ideal para quem busca liberdade, privacidade e lucro com qualidade.",
   },
   {
+    id: "module-5",
     title: "Como fazer mais de 10k com Lives - Keven Borges",
     description: "Aprenda a criar lives simples que vendem todos os dias. Keven mostra como montar a estrutura certa, escolher produtos que convertem e transformar transmissões comuns em faturamento real.",
   },
@@ -52,10 +57,10 @@ const Modules = () => {
 
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
-            {modules.map((module, index) => (
+            {modules.map((module) => (
               <AccordionItem
-                key={index}
-                value={`module-${index}`}
+                key={module.id}
+                value={module.id}
                 className="border border-border rounded-xl bg-card/50 backdrop-blur px-6 overflow-hidden"
               >
                 <AccordionTrigger className="text-left py-6 hover:no-underline group">

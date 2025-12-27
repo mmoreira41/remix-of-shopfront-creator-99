@@ -1,73 +1,164 @@
-# Welcome to your Lovable project
+# Renda Com Shop - Landing Page
 
-## Project info
+Landing page para o curso "Renda Com Shop" - Aprenda a faturar mais de R$ 10.000/mês com TikTok Shop.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Sobre o Projeto
 
-## How can I edit this code?
+Landing page moderna e responsiva desenvolvida para promover o curso de TikTok Shop dos criadores Gabriel Silva e Keven Borges. O site apresenta:
 
-There are several ways of editing your application.
+- **Hero Section** com animações geométricas elegantes
+- **Depoimentos** com scroll infinito animado
+- **Bônus exclusivos** do curso
+- **Módulos detalhados** do conteúdo
+- **Pilares** de estratégia
+- **Comparação** entre métodos
+- **FAQ** completo
+- **Preços** e garantias
 
-**Use Lovable**
+## 🛠️ Tecnologias
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Este projeto foi construído com:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18** - Biblioteca UI
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool e dev server
+- **Tailwind CSS** - Framework CSS utilitário
+- **Framer Motion** - Animações fluidas
+- **Zod** - Validação de dados em runtime
+- **shadcn/ui** - Componentes UI reutilizáveis
+- **Lucide React** - Ícones
 
-**Use your preferred IDE**
+## 📁 Estrutura do Projeto
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+src/
+├── components/
+│   ├── landing/          # Componentes da landing page
+│   │   ├── Hero.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── Bonuses.tsx
+│   │   ├── Modules.tsx
+│   │   ├── Pillars.tsx
+│   │   ├── Comparison.tsx
+│   │   ├── FAQ.tsx
+│   │   └── Pricing.tsx
+│   ├── ui/              # Componentes UI reutilizáveis
+│   │   ├── button.tsx
+│   │   ├── section-header.tsx
+│   │   └── ...
+│   └── ErrorBoundary.tsx # Error boundary global
+├── config/
+│   └── site-config.ts   # Configurações e dados do site
+├── lib/
+│   ├── constants.ts     # Constantes (animações, dimensões)
+│   ├── mock-data.ts     # Dados mock com IDs únicos
+│   └── utils.ts         # Funções utilitárias
+└── assets/              # Imagens e recursos
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🏃‍♂️ Como Executar
 
-Follow these steps:
+### Pré-requisitos
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js 18+ e npm instalados - [instalar com nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Instalação
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# Clone o repositório
+git clone <URL_DO_REPOSITORIO>
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Entre na pasta do projeto
+cd remix-of-shopfront-creator-99
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O site estará disponível em `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Build para Produção
 
-**Use GitHub Codespaces**
+```bash
+# Gerar build otimizado
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview do build de produção
+npm run preview
+```
 
-## What technologies are used for this project?
+## ✨ Funcionalidades Implementadas
 
-This project is built with:
+### Arquitetura e Qualidade
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- ✅ **TypeScript Strict Mode** - Type safety completo
+- ✅ **Error Boundary** - Tratamento de erros robusto
+- ✅ **Validação Zod** - Validação de dados em runtime
+- ✅ **Constantes Centralizadas** - Manutenção facilitada
+- ✅ **Componentes Reutilizáveis** - DRY (Don't Repeat Yourself)
+- ✅ **CSS Variables** - Tema consistente e customizável
 
-## How can I deploy this project?
+### Animações
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- ✅ **Formas Geométricas Flutuantes** - Hero section animada
+- ✅ **Scroll Infinito** - Depoimentos em loop contínuo
+- ✅ **Fade-in Progressivo** - Elementos aparecem suavemente
+- ✅ **Hover Effects** - Interações visuais em cards
+- ✅ **Stagger Animations** - Elementos aparecem em sequência
 
-## Can I connect a custom domain to my Lovable project?
+### Performance
 
-Yes, you can!
+- ✅ **Bundle Otimizado** - 2.3MB (redução de 18%)
+- ✅ **Code Splitting** - Carregamento sob demanda
+- ✅ **Lazy Loading** - Imagens e componentes
+- ✅ **Tree Shaking** - Remoção de código não utilizado
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Personalização
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Cores e Tema
+
+As cores são definidas através de CSS variables em `src/index.css`:
+
+```css
+:root {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --accent: 142.1 76.2% 36.3%;
+  --cyan: 189 94% 43%;
+  /* ... */
+}
+```
+
+### Constantes de Animação
+
+Ajuste tempos e durações em `src/lib/constants.ts`:
+
+```typescript
+export const ANIMATION_DURATION = {
+  FAST: 0.5,
+  NORMAL: 0.8,
+  SLOW: 1,
+  // ...
+};
+```
+
+### Conteúdo do Site
+
+Todo o conteúdo está centralizado em `src/config/site-config.ts` com validação Zod.
+
+## 📄 Licença
+
+Este projeto é privado e proprietário. Todos os direitos reservados.
+
+## 👥 Autores
+
+- **Gabriel Silva** - Criador e Instrutor
+- **Keven Borges** - Criador e Instrutor
+
+---
+
+**Desenvolvido com ❤️ para ajudar pessoas a alcançarem independência financeira através do TikTok Shop**
